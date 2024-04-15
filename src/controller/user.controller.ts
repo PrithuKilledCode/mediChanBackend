@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import prisma from "../DB/db.config.js";
-import { executionAsyncResource } from "async_hooks";
 export const createUser = async(req:Request,res:Response) =>{
   const {username,password,email}=req.body;
   const findUser=await prisma.user.findUnique({
